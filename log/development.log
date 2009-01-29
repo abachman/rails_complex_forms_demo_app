@@ -3270,3 +3270,275 @@ Rendering template within layouts/job_applications
 Rendering job_applications/index
   [4;35;1mJobApplication Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
 Completed in 36ms (View: 23, DB: 0) | 200 OK [http://localhost/job_applications]
+
+
+Processing JobApplicationsController#new (for 127.0.0.1 at 2009-01-28 23:21:29) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mJobApplication Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
+  [4;36;1mAddress Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `addresses`[0m
+Rendering template within layouts/job_applications
+Rendering job_applications/new
+  [4;35;1mHistory Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `histories`[0m
+Rendered job_applications/_history (9.2ms)
+Rendered job_applications/_address (2.7ms)
+Rendered job_applications/_fields (31.1ms)
+Completed in 56ms (View: 41, DB: 2) | 200 OK [http://localhost/job_applications/new]
+
+
+Processing JobApplicationsController#create (for 127.0.0.1 at 2009-01-28 23:21:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"4f0e79b1ce496523cf5a131aaacfde9c47fff918", "job_application"=>{"dob(1i)"=>"2009", "new_address_attributes"=>{"city"=>"", "id"=>"", "state"=>""}, "dob(2i)"=>"1", "dob(3i)"=>"29", "new_history_attributes"=>{"0"=>{"end_date(3i)"=>"29", "start_date(1i)"=>"2009", "start_date(2i)"=>"1", "business_name"=>"e fold!", "start_date(3i)"=>"29", "end_date(1i)"=>"2009", "end_date(2i)"=>"1"}, "1"=>{"end_date(3i)"=>"29", "start_date(1i)"=>"2009", "start_date(2i)"=>"1", "business_name"=>"", "start_date(3i)"=>"29", "end_date(1i)"=>"2009", "end_date(2i)"=>"1"}}, "last_name"=>"", "email"=>"", "first_name"=>""}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mJobApplication Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
+  [4;36;1mAddress Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `addresses`[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mHistory Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `histories`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mJobApplication Create (0.3ms)[0m   [0mINSERT INTO `job_applications` (`dob`, `created_at`, `updated_at`, `last_name`, `first_name`, `email`) VALUES('2009-01-29', '2009-01-29 04:21:40', '2009-01-29 04:21:40', '', '', '')[0m
+  [4;36;1mHistory Create (0.2ms)[0m   [0;1mINSERT INTO `histories` (`start_date`, `business_name`, `job_application_id`, `created_at`, `updated_at`, `end_date`) VALUES('2009-01-29', 'e fold!', 7, '2009-01-29 04:21:40', '2009-01-29 04:21:40', '2009-01-29')[0m
+  [4;35;1mHistory Create (0.2ms)[0m   [0mINSERT INTO `histories` (`start_date`, `business_name`, `job_application_id`, `created_at`, `updated_at`, `end_date`) VALUES('2009-01-29', '', 7, '2009-01-29 04:21:40', '2009-01-29 04:21:40', '2009-01-29')[0m
+  [4;36;1mAddress Create (0.2ms)[0m   [0;1mINSERT INTO `addresses` (`city`, `job_application_id`, `created_at`, `updated_at`, `education_id`, `state`) VALUES('', 7, '2009-01-29 04:21:40', '2009-01-29 04:21:40', NULL, '')[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCOMMIT[0m
+Redirected to #<JobApplication:0xb6a44794>
+Completed in 51ms (DB: 9) | 302 Found [http://localhost/job_applications]
+
+
+Processing JobApplicationsController#show (for 127.0.0.1 at 2009-01-28 23:21:40) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mJobApplication Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
+  [4;36;1mJobApplication Load (0.3ms)[0m   [0;1mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Rendering template within layouts/job_applications
+Rendering job_applications/show
+Completed in 18ms (View: 7, DB: 1) | 200 OK [http://localhost/job_applications/7]
+
+
+Processing JobApplicationsController#index (for 127.0.0.1 at 2009-01-28 23:21:42) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mJobApplication Load (0.4ms)[0m   [0;1mSELECT * FROM `job_applications` [0m
+Rendering template within layouts/job_applications
+Rendering job_applications/index
+  [4;35;1mJobApplication Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
+Completed in 39ms (View: 25, DB: 1) | 200 OK [http://localhost/job_applications]
+
+
+Processing JobApplicationsController#show (for 127.0.0.1 at 2009-01-28 23:21:44) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mJobApplication Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
+  [4;36;1mJobApplication Load (0.1ms)[0m   [0;1mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Rendering template within layouts/job_applications
+Rendering job_applications/show
+Completed in 27ms (View: 11, DB: 1) | 200 OK [http://localhost/job_applications/7]
+
+
+Processing JobApplicationsController#edit (for 127.0.0.1 at 2009-01-28 23:21:46) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mJobApplication Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `job_applications`[0m
+  [4;35;1mJobApplication Load (0.5ms)[0m   [0mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Rendering template within layouts/job_applications
+Rendering job_applications/edit
+  [4;36;1mHistory Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `histories`[0m
+Rendered job_applications/_history (15.6ms)
+  [4;35;1mHistory Load (0.4ms)[0m   [0mSELECT * FROM `histories` WHERE (`histories`.job_application_id = 7) [0m
+  [4;36;1mAddress Load (0.4ms)[0m   [0;1mSELECT * FROM `addresses` WHERE (`addresses`.job_application_id = 7) LIMIT 1[0m
+  [4;35;1mAddress Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `addresses`[0m
+Rendered job_applications/_address (5.0ms)
+Rendered job_applications/_history (5.5ms)
+Rendered job_applications/_history (5.9ms)
+Rendered job_applications/_fields (66.0ms)
+Completed in 96ms (View: 79, DB: 2) | 200 OK [http://localhost/job_applications/7/edit]
+
+
+Processing JobApplicationsController#update (for 127.0.0.1 at 2009-01-28 23:21:52) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4f0e79b1ce496523cf5a131aaacfde9c47fff918", "id"=>"7", "job_application"=>{"existing_history_attributes"=>{"4"=>{"end_date(3i)"=>"29", "start_date(1i)"=>"2009", "start_date(2i)"=>"1", "business_name"=>"e fold!", "start_date(3i)"=>"29", "end_date(1i)"=>"2009", "end_date(2i)"=>"1"}}, "dob(1i)"=>"2009", "dob(2i)"=>"1", "existing_address_attributes"=>{"city"=>"", "id"=>"6", "state"=>""}, "dob(3i)"=>"29", "last_name"=>"", "email"=>"", "first_name"=>""}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mJobApplication Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
+  [4;36;1mJobApplication Load (0.1ms)[0m   [0;1mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Entering existing history attributes
+  [4;35;1mHistory Load (0.1ms)[0m   [0mSELECT * FROM `histories` WHERE (`histories`.job_application_id = 7) [0m
+  [4;36;1mHistory Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `histories`[0m
+considering existing history: e fold!
+updating existing history:'e fold!' becomes:'e fold!'
+considering existing history: 
+
+
+NameError (undefined local variable or method `task' for #<JobApplication:0xb680ae9c>):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/attribute_methods.rb:260:in `method_missing'
+    /app/models/job_application.rb:23:in `existing_history_attributes='
+    /app/models/job_application.rb:16:in `each'
+    /app/models/job_application.rb:16:in `existing_history_attributes='
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2587:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2587:in `attributes='
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2583:in `each'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2583:in `attributes='
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:2469:in `update_attributes'
+    /app/controllers/job_applications_controller.rb:50:in `update'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:106:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/mime_responds.rb:106:in `respond_to'
+    /app/controllers/job_applications_controller.rb:49:in `update'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /usr/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (49.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (1.3ms)
+Rendering /usr/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing JobApplicationsController#update (for 127.0.0.1 at 2009-01-28 23:22:50) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4f0e79b1ce496523cf5a131aaacfde9c47fff918", "id"=>"7", "job_application"=>{"existing_history_attributes"=>{"4"=>{"end_date(3i)"=>"29", "start_date(1i)"=>"2009", "start_date(2i)"=>"1", "business_name"=>"e fold!", "start_date(3i)"=>"29", "end_date(1i)"=>"2009", "end_date(2i)"=>"1"}}, "dob(1i)"=>"2009", "dob(2i)"=>"1", "existing_address_attributes"=>{"city"=>"", "id"=>"6", "state"=>""}, "dob(3i)"=>"29", "new_history_attributes"=>{"2"=>{"end_date(3i)"=>"29", "start_date(1i)"=>"2009", "start_date(2i)"=>"1", "business_name"=>"", "start_date(3i)"=>"29", "end_date(1i)"=>"2009", "end_date(2i)"=>"1"}}, "last_name"=>"", "email"=>"", "first_name"=>""}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mJobApplication Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `job_applications`[0m
+  [4;35;1mJobApplication Load (0.1ms)[0m   [0mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Entering existing history attributes
+  [4;36;1mHistory Load (0.1ms)[0m   [0;1mSELECT * FROM `histories` WHERE (`histories`.job_application_id = 7) [0m
+  [4;35;1mHistory Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `histories`[0m
+considering existing history: e fold!
+updating existing history:'e fold!' becomes:'e fold!'
+considering existing history: 
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mHistory Update (0.3ms)[0m   [0mUPDATE `histories` SET job_application_id = NULL WHERE (job_application_id = 7 AND id IN (5)) [0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mAddress Load (0.1ms)[0m   [0mSELECT * FROM `addresses` WHERE (`addresses`.job_application_id = 7) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;36;1mAddress Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `addresses`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mHistory Create (0.3ms)[0m   [0;1mINSERT INTO `histories` (`start_date`, `business_name`, `job_application_id`, `created_at`, `updated_at`, `end_date`) VALUES('2009-01-29', '', 7, '2009-01-29 04:22:50', '2009-01-29 04:22:50', '2009-01-29')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mCOMMIT[0m
+Redirected to #<JobApplication:0xb694bc20>
+Completed in 47ms (DB: 11) | 302 Found [http://localhost/job_applications/7]
+
+
+Processing JobApplicationsController#show (for 127.0.0.1 at 2009-01-28 23:22:50) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mJobApplication Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
+  [4;36;1mJobApplication Load (0.1ms)[0m   [0;1mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Rendering template within layouts/job_applications
+Rendering job_applications/show
+Completed in 17ms (View: 7, DB: 1) | 200 OK [http://localhost/job_applications/7]
+
+
+Processing JobApplicationsController#edit (for 127.0.0.1 at 2009-01-28 23:22:53) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mJobApplication Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `job_applications`[0m
+  [4;35;1mJobApplication Load (0.1ms)[0m   [0mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Rendering template within layouts/job_applications
+Rendering job_applications/edit
+  [4;36;1mHistory Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `histories`[0m
+Rendered job_applications/_history (14.8ms)
+  [4;35;1mHistory Load (0.4ms)[0m   [0mSELECT * FROM `histories` WHERE (`histories`.job_application_id = 7) [0m
+  [4;36;1mAddress Load (0.2ms)[0m   [0;1mSELECT * FROM `addresses` WHERE (`addresses`.job_application_id = 7) LIMIT 1[0m
+  [4;35;1mAddress Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `addresses`[0m
+Rendered job_applications/_address (6.5ms)
+Rendered job_applications/_history (5.8ms)
+Rendered job_applications/_history (6.2ms)
+Rendered job_applications/_fields (69.5ms)
+Completed in 105ms (View: 90, DB: 2) | 200 OK [http://localhost/job_applications/7/edit]
+
+
+Processing JobApplicationsController#update (for 127.0.0.1 at 2009-01-28 23:22:58) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"4f0e79b1ce496523cf5a131aaacfde9c47fff918", "id"=>"7", "job_application"=>{"existing_history_attributes"=>{"4"=>{"end_date(3i)"=>"29", "start_date(1i)"=>"2009", "start_date(2i)"=>"1", "business_name"=>"e fold!", "start_date(3i)"=>"29", "end_date(1i)"=>"2009", "end_date(2i)"=>"1"}}, "dob(1i)"=>"2009", "dob(2i)"=>"1", "existing_address_attributes"=>{"city"=>"", "id"=>"6", "state"=>""}, "dob(3i)"=>"29", "last_name"=>"", "email"=>"", "first_name"=>""}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mJobApplication Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
+  [4;36;1mJobApplication Load (0.1ms)[0m   [0;1mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Entering existing history attributes
+  [4;35;1mHistory Load (0.2ms)[0m   [0mSELECT * FROM `histories` WHERE (`histories`.job_application_id = 7) [0m
+  [4;36;1mHistory Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `histories`[0m
+considering existing history: e fold!
+updating existing history:'e fold!' becomes:'e fold!'
+considering existing history: 
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mHistory Update (0.4ms)[0m   [0;1mUPDATE `histories` SET job_application_id = NULL WHERE (job_application_id = 7 AND id IN (6)) [0m
+  [4;35;1mSQL (7.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mAddress Load (0.1ms)[0m   [0;1mSELECT * FROM `addresses` WHERE (`addresses`.job_application_id = 7) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: id
+  [4;35;1mAddress Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `addresses`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to #<JobApplication:0xb6a1f584>
+Completed in 46ms (DB: 12) | 302 Found [http://localhost/job_applications/7]
+
+
+Processing JobApplicationsController#show (for 127.0.0.1 at 2009-01-28 23:22:58) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mJobApplication Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `job_applications`[0m
+  [4;36;1mJobApplication Load (0.1ms)[0m   [0;1mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Rendering template within layouts/job_applications
+Rendering job_applications/show
+Completed in 17ms (View: 7, DB: 1) | 200 OK [http://localhost/job_applications/7]
+
+
+Processing JobApplicationsController#edit (for 127.0.0.1 at 2009-01-28 23:23:00) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mJobApplication Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `job_applications`[0m
+  [4;35;1mJobApplication Load (0.2ms)[0m   [0mSELECT * FROM `job_applications` WHERE (`job_applications`.`id` = 7) [0m
+Rendering template within layouts/job_applications
+Rendering job_applications/edit
+  [4;36;1mHistory Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `histories`[0m
+Rendered job_applications/_history (9.6ms)
+  [4;35;1mHistory Load (0.3ms)[0m   [0mSELECT * FROM `histories` WHERE (`histories`.job_application_id = 7) [0m
+  [4;36;1mAddress Load (0.1ms)[0m   [0;1mSELECT * FROM `addresses` WHERE (`addresses`.job_application_id = 7) LIMIT 1[0m
+  [4;35;1mAddress Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `addresses`[0m
+Rendered job_applications/_address (4.8ms)
+Rendered job_applications/_history (5.7ms)
+Rendered job_applications/_fields (42.0ms)
+Completed in 71ms (View: 55, DB: 2) | 200 OK [http://localhost/job_applications/7/edit]

@@ -5,4 +5,4 @@ http://zilkey.com/2008/4/5/complex-forms-with-correct-ids
 http://github.com/zilkey/complex_forms_demo_app/tree/master
   (update to the blog post listed above)
 http://api.rubyonrails.com/classes/ActiveRecord/Associations/ClassMethods.html 
-  (I know what "others" means)
+  (I know what "others" means!)

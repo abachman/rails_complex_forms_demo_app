@@ -12,15 +12,12 @@ class JobApplication < ActiveRecord::Base
     end
   end
   def existing_history_attributes=(attributes)
-    RAILS_DEFAULT_LOGGER.debug("Entering existing history attributes")
     histories.reject(&:new_record?).each do |history|
-      RAILS_DEFAULT_LOGGER.debug("considering existing history: #{history.business_name}")
       atts = attributes[history.id.to_s]
       if atts
-        RAILS_DEFAULT_LOGGER.debug("updating existing history:'#{history.business_name}' becomes:'#{atts[:business_name]}'")
         history.attributes = atts
       else
-        history.delete(task)
+          histories.delete(history)
       end
     end
   end
