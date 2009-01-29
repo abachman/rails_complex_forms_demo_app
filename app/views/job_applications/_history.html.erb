@@ -1,0 +1,20 @@
+<div class="history"> 
+  <%-
+    index ||= "INDEX" 
+    new_or_existing = history.new_record? ? 'new' : 'existing'
+    id_or_index = history.new_record? ? index : history.id 
+    prefix = "job_application[#{new_or_existing}_history_attributes][]" 
+  -%>
+
+  <% fields_for prefix, history do |hist| -%>     
+    <p><%= hist.label :business_name, nil, :index => id_or_index %>
+       <%= hist.text_field :business_name, :index => id_or_index %></p>
+
+    <p><%= hist.label :start_date, nil, :index => id_or_index %>
+       <%= hist.date_select :start_date, :index => id_or_index %></p>
+       
+    <p><%= hist.label :end_date, nil, :index => id_or_index %>
+       <%= hist.date_select :end_date, :index => id_or_index %></p>
+   <%= content_tag :p, link_to_function("Remove this Job History", "if(confirm('Are you sure?')){$(this).up('.history').remove()}") %> 
+  <% end -%>
+</div>

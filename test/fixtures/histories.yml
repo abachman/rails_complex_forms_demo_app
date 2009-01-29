@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  business_name: MyString
+  start_date: 2009-01-28
+  end_date: 2009-01-28
+  job_application: 
+
+two:
+  business_name: MyString
+  start_date: 2009-01-28
+  end_date: 2009-01-28
+  job_application: 

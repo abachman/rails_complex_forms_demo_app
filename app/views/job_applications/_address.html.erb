@@ -1,0 +1,13 @@
+<% fields_for_address(address || Address.new) do |add| %>
+  <%= add.hidden_field :id %>
+  <table>
+    <tr>
+      <td><%= add.text_field :city %></td>
+      <td><%= add.text_field :state %></td>
+    </tr>
+    <tr>
+      <td><%= add.label :city %> </td>
+      <td<%= add.label :state %></td>
+    </tr>
+  </table>
+<% end %>

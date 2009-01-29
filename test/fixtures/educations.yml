@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  school_name: MyString
+  school_type: MyString
+  job_application: 
+
+two:
+  school_name: MyString
+  school_type: MyString
+  job_application: 

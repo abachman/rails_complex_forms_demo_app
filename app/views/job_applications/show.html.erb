@@ -1,0 +1,23 @@
+<p>
+  <b>First name:</b>
+  <%=h @job_application.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @job_application.last_name %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%=h @job_application.dob %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @job_application.email %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_application_path(@job_application) %> |
+<%= link_to 'Back', job_applications_path %>
